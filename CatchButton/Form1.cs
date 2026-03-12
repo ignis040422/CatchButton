@@ -13,12 +13,19 @@ namespace CatchButton
         }
 
         private void Catch_Me_Button_MouseEnter(object sender, EventArgs e)
-        {
-            int x_position = 100;
-            int y_position = 151;
-            // 새로운위치값세팅. 새로운X,Y 좌표값
-            Catch_Me_Button.Location = new Point(x_position, y_position);
-            // 버튼을새로운위치로옮김(새로운Point 객체생성)
+        {// 1. 난수생성기준비
+            Random rd = new Random();
+         // 2. 가용영역계산(버튼이폼테두리에걸리지않게보호)
+         // ClientSize는타이틀바와테두리를제외한실제흰도화지영역임
+            int maxX = this.ClientSize.Width - Catch_Me_Button.Width;
+            int maxY = this.ClientSize.Height - Catch_Me_Button.Height;
+            // 3. 랜덤좌표추출(0 ~ 최대가용치사이)
+            int nextX = rd.Next(0, maxX);
+            int nextY = rd.Next(0, maxY);
+            // 4. 위치할당(새로운Point 객체생성)
+            Catch_Me_Button.Location = new Point(nextX, nextY);
+            // 5. 시각적피드백(폼제목표시줄에좌표출력)
+            this.Text = $"버튼위치: ({nextX}, {nextY})";
         }
     }
 }
