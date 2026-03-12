@@ -29,25 +29,37 @@
         private void InitializeComponent()
         {
             Catch_Me_Button = new Button();
+            btnReset = new Button();
             SuspendLayout();
             // 
             // Catch_Me_Button
             // 
             Catch_Me_Button.Font = new Font("맑은 고딕", 15F);
-            Catch_Me_Button.Location = new Point(300, 185);
+            Catch_Me_Button.Location = new Point(96, 76);
             Catch_Me_Button.Name = "Catch_Me_Button";
-            Catch_Me_Button.Size = new Size(147, 55);
+            Catch_Me_Button.Size = new Size(235, 116);
             Catch_Me_Button.TabIndex = 0;
             Catch_Me_Button.Text = "나를 잡아봐";
             Catch_Me_Button.UseVisualStyleBackColor = true;
             Catch_Me_Button.Click += Catch_Me_Button_Click;
             Catch_Me_Button.MouseEnter += Catch_Me_Button_MouseEnter;
             // 
+            // btnReset
+            // 
+            btnReset.Location = new Point(520, 307);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(75, 23);
+            btnReset.TabIndex = 1;
+            btnReset.Text = "다시 시작";
+            btnReset.UseVisualStyleBackColor = true;
+            btnReset.Click += BtnReset_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(615, 339);
+            Controls.Add(btnReset);
             Controls.Add(Catch_Me_Button);
             Name = "Form1";
             Text = "Form1";
@@ -57,5 +69,7 @@
         #endregion
 
         private Button Catch_Me_Button;
+        private Button btnReset;
+        private Button btnReset_Click;
     }
 }
